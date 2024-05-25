@@ -1,40 +1,27 @@
 package com.example.client;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
-import java.io.IOException;
+import java.util.List;
 
 public class PrimaryController {
 
     @FXML
-    private TextField messageField;
-    @FXML
-    private Label responseLabel;
-    @FXML
-    private Button sendButton;
+    private Label usersLabel;
 
-    private Client client;
-
-    public PrimaryController() {
-        client = new Client("localhost", 8080);
+    public void initialize() {
+        DatabaseUtil.initializeDatabase();
+        DatabaseUtil.insertInitialUsers();
+        displayUsers();
     }
 
-    @FXML
-    private void initialize() {
-        sendButton.setOnAction(event -> sendMessage());
-    }
-
-    @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
-    }
-
-    private void sendMessage() {
-        String message = messageField.getText();
-        String response = client.sendMessage(message);
-        responseLabel.setText(response);
+    private void displayUsers() {
+        List<String> users = DatabaseUtil.getUsers();
+        StringBuilder usersText = new StringBuilder("Users:\n");
+        for (String user : users) {
+            usersText.append("- ").append(user).append("\n");
+        }
+        usersLabel.setText(usersText.toString());
     }
 }

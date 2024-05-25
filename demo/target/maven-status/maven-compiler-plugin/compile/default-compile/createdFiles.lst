@@ -1,0 +1,7 @@
+module-info.class
+com\example\client\DatabaseUtil.class
+com\example\client\App.class
+com\example\client\Client.class
+com\example\server\Server.class
+com\example\client\PrimaryController.class
+com\example\server\ClientHandler.class

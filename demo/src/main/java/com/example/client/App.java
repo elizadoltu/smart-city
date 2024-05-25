@@ -9,22 +9,13 @@ import java.io.IOException;
 
 public class App extends Application {
 
-    private static Scene scene;
-
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary").load(), 640, 480);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
+        Scene scene = new Scene(loader.load());
         stage.setScene(scene);
+        stage.setTitle("Client App");
         stage.show();
-    }
-
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml).load());
-    }
-
-    private static FXMLLoader loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader;
     }
 
     public static void main(String[] args) {
