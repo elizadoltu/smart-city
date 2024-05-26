@@ -13,6 +13,7 @@ public class Client {
     public Client(String hostname, int port) {
         this.hostname = hostname;
         this.port = port;
+        DatabaseUtil.insertUser(hostname, port);
     }
 
     public String sendMessage(String message) {

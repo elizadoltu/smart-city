@@ -9,4 +9,5 @@
       prefWidth="400" prefHeight="300">
     <Label fx:id="parkingLotsLabel" />
     <Label fx:id="powerStationsLabel" />
+    <Label fx:id="usersLabel" />
 </VBox>

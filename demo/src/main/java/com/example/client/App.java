@@ -11,6 +11,11 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+
+        String hostname = "localhost";
+        int port = 8080;
+        new Client(hostname, port);
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);

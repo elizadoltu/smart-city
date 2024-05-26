@@ -13,11 +13,15 @@ public class PrimaryController {
     @FXML
     private Label powerStationsLabel;
 
+    @FXML
+    private Label usersLabel;
+
     public void initialize() {
         DatabaseUtil.initializeDatabase();
         DatabaseUtil.insertInitialData();
         displayParkingLots();
         displayPowerStations();
+        displayUsers();
     }
 
     private void displayParkingLots() {
@@ -36,5 +40,14 @@ public class PrimaryController {
             powerStationsText.append("- ").append(station).append("\n");
         }
         powerStationsLabel.setText(powerStationsText.toString());
+    }
+
+    private void displayUsers() {
+        List<User> users = DatabaseUtil.getUsers();
+        StringBuilder usersText = new StringBuilder("Users:\n");
+        for (User user : users) {
+            usersText.append("- ").append(user).append("\n");
+        }
+        usersLabel.setText(usersText.toString());
     }
 }
