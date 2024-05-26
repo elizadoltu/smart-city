@@ -8,20 +8,33 @@ import java.util.List;
 public class PrimaryController {
 
     @FXML
-    private Label usersLabel;
+    private Label parkingLotsLabel;
+
+    @FXML
+    private Label powerStationsLabel;
 
     public void initialize() {
         DatabaseUtil.initializeDatabase();
-        DatabaseUtil.insertInitialUsers();
-        displayUsers();
+        DatabaseUtil.insertInitialData();
+        displayParkingLots();
+        displayPowerStations();
     }
 
-    private void displayUsers() {
-        List<String> users = DatabaseUtil.getUsers();
-        StringBuilder usersText = new StringBuilder("Users:\n");
-        for (String user : users) {
-            usersText.append("- ").append(user).append("\n");
+    private void displayParkingLots() {
+        List<String> parkingLots = DatabaseUtil.getParkingLots();
+        StringBuilder parkingLotsText = new StringBuilder("Parking Lots:\n");
+        for (String lot : parkingLots) {
+            parkingLotsText.append("- ").append(lot).append("\n");
         }
-        usersLabel.setText(usersText.toString());
+        parkingLotsLabel.setText(parkingLotsText.toString());
+    }
+
+    private void displayPowerStations() {
+        List<String> powerStations = DatabaseUtil.getPowerStations();
+        StringBuilder powerStationsText = new StringBuilder("Power Stations:\n");
+        for (String station : powerStations) {
+            powerStationsText.append("- ").append(station).append("\n");
+        }
+        powerStationsLabel.setText(powerStationsText.toString());
     }
 }

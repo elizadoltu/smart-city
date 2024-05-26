@@ -7,5 +7,6 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.client.PrimaryController"
       prefWidth="400" prefHeight="300">
-    <Label fx:id="usersLabel" />
+    <Label fx:id="parkingLotsLabel" />
+    <Label fx:id="powerStationsLabel" />
 </VBox>
