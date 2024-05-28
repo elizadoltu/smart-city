@@ -1,53 +1,74 @@
 package com.example.client;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
+import java.io.IOException;
 import java.util.List;
 
 public class PrimaryController {
 
     @FXML
-    private Label parkingLotsLabel;
+    private VBox parkingLotsVBox;
 
     @FXML
-    private Label powerStationsLabel;
+    private VBox powerStationsVBox;
 
-    @FXML
-    private Label usersLabel;
+    //am scos sa arate userii btw, ii avem in baza de date
 
     public void initialize() {
-        DatabaseUtil.initializeDatabase();
-        DatabaseUtil.insertInitialData();
         displayParkingLots();
         displayPowerStations();
-        displayUsers();
     }
 
     private void displayParkingLots() {
         List<String> parkingLots = DatabaseUtil.getParkingLots();
-        StringBuilder parkingLotsText = new StringBuilder("Parking Lots:\n");
         for (String lot : parkingLots) {
-            parkingLotsText.append("- ").append(lot).append("\n");
+            Button button = new Button(lot);
+            button.setOnAction(event -> openParkingLotView(lot));
+            parkingLotsVBox.getChildren().add(button);
         }
-        parkingLotsLabel.setText(parkingLotsText.toString());
     }
 
     private void displayPowerStations() {
         List<String> powerStations = DatabaseUtil.getPowerStations();
-        StringBuilder powerStationsText = new StringBuilder("Power Stations:\n");
         for (String station : powerStations) {
-            powerStationsText.append("- ").append(station).append("\n");
+            Button button = new Button(station);
+            button.setOnAction(event -> openPowerStationView(station));
+            powerStationsVBox.getChildren().add(button);
         }
-        powerStationsLabel.setText(powerStationsText.toString());
     }
 
-    private void displayUsers() {
-        List<User> users = DatabaseUtil.getUsers();
-        StringBuilder usersText = new StringBuilder("Users:\n");
-        for (User user : users) {
-            usersText.append("- ").append(user).append("\n");
+    private void openParkingLotView(String parkingLot) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ParkingLotView.fxml"));
+            Parent root = loader.load();
+            ParkingLotController controller = loader.getController();
+            controller.setParkingLot(parkingLot);
+
+            Stage stage = (Stage) parkingLotsVBox.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        usersLabel.setText(usersText.toString());
+    }
+
+    private void openPowerStationView(String powerStation) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("PowerStationView.fxml"));
+            Parent root = loader.load();
+            PowerStationController controller = loader.getController();
+            controller.setPowerStation(powerStation);
+
+            Stage stage = (Stage) powerStationsVBox.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

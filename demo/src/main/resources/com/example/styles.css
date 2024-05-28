@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'CairoPlay-Bold';
+    src: url('/com/example/fonts/CairoPlay-Bold.ttf');
+}
+
+    
+
+.title-label {
+    -fx-font-family: 'CairoPlay-Bold';
+    -fx-font-size: 24px;
+}
+
+.section-label {
+    -fx-font-family: 'CairoPlay-Bold';
+    -fx-font-size: 18px;
+}
+
+.button {
+    -fx-font-family: 'CairoPlay-Bold';
+    -fx-font-size: 14px;
+}
