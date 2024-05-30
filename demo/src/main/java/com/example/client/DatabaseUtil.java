@@ -178,6 +178,32 @@ public class DatabaseUtil {
         System.out.println("Initial data inserted into database.");
     }
 
+    public static void updateParkingLotAvailability(String name, int change) { //aici trb fac la fel pt charging stations
+        String sql = "UPDATE parking SET available = available + ? WHERE name = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, change);
+            pstmt.setString(2, name);
+            pstmt.executeUpdate();
+            System.out.println("Updated availability for parking lot: " + name);
+        } catch (SQLException e) {
+            System.out.println("Error updating parking lot availability: " + e.getMessage());
+        }
+    }
+
+    public static void updatePowerStationAvailability(String name, int change) {
+        String sql = "UPDATE powerstations SET available = available + ? WHERE name = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, change);
+            pstmt.setString(2, name);
+            pstmt.executeUpdate();
+            System.out.println("Updated availability for power station: " + name);
+        } catch (SQLException e) {
+            System.out.println("Error updating power station availability: " + e.getMessage());
+        }
+    }
+    
     public static void main(String[] args) {
         initializeDatabase();
         insertInitialData();

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.client.PowerStationController"
+      spacing="10" alignment="CENTER" styleClass="vbox"
       prefWidth="900" prefHeight="600">
+
     <Label fx:id="powerStationLabel" />
+    <ImageView fx:id="powerStationImageView" fitWidth="400" fitHeight="300" />
+    <CheckBox text="I am charging here" fx:id="chargingHereCheckBox" />
     <Button fx:id="backButton" text="Back" />
 </VBox>

@@ -1,9 +1,9 @@
-@font-face {
+@font-face { 
     font-family: 'CairoPlay-Bold';
     src: url('/com/example/fonts/CairoPlay-Bold.ttf');
 }
 
-    
+    /* doesn't work */
 
 .title-label {
     -fx-font-family: 'CairoPlay-Bold';
