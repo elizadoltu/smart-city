@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.AdminManagementController" alignment="CENTER" spacing="10" prefWidth="900" prefHeight="600">
+    <Label text="Admin Management" styleClass="title-label"/>
+
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Parking Lots"/>
+            <ListView fx:id="parkingListView"/>
+        </VBox>
+        <VBox>
+            <Label text="Power Stations"/>
+            <ListView fx:id="powerStationListView"/>
+        </VBox>
+        <VBox>
+            <Label text="Users"/>
+            <ListView fx:id="userListView"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Parking Lot Name"/>
+            <TextField fx:id="parkingNameField" promptText="Parking Lot Name"/>
+            <Label text="Availability"/>
+            <TextField fx:id="parkingAvailabilityField" promptText="Availability"/>
+            <Button fx:id="addParkingButton" text="Add Parking Lot"/>
+            <Button fx:id="updateParkingButton" text="Update Parking Lot"/>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Power Station Name"/>
+            <TextField fx:id="powerStationNameField" promptText="Power Station Name"/>
+            <Label text="Availability"/>
+            <TextField fx:id="powerStationAvailabilityField" promptText="Availability"/>
+            <Button fx:id="addPowerStationButton" text="Add Power Station"/>
+            <Button fx:id="updatePowerStationButton" text="Update Power Station"/>
+        </VBox>
+    </HBox>
+
+    <Label fx:id="messageLabel" textFill="green"/>
+</VBox>

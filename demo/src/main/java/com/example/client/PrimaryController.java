@@ -19,8 +19,9 @@ public class PrimaryController {
     @FXML
     private VBox powerStationsVBox;
 
-    //am scos sa arate userii btw, ii avem in baza de date
+  
 
+    // Initialize method to set up initial configurations
     public void initialize() {
         displayParkingLots();
         displayPowerStations();
@@ -71,4 +72,6 @@ public class PrimaryController {
             e.printStackTrace();
         }
     }
+
+
 }

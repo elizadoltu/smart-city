@@ -13,10 +13,10 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         String hostname = "localhost";
-        int port = 8081; //am schimbat iar aici
+        int port = 8081; // Adjust as necessary
         new Client(hostname, port);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("primary.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("app.fxml"));
         Scene scene = new Scene(loader.load());
         
         // Corrected path to the CSS file

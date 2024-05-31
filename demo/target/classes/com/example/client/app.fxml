@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.AppController" alignment="CENTER" spacing="20" prefWidth="900" prefHeight="600">
+    <Label text="Smart-City" styleClass="title-label"/>
+    <Button text="Log in as Admin" fx:id="adminLoginButton"/>
+    <Button text="Log in as User" fx:id="userLoginButton"/>
+</VBox>
