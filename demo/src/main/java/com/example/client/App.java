@@ -13,15 +13,17 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         String hostname = "localhost";
-        int port = 8081; // Adjust as necessary
+        int port = 8081;
         new Client(hostname, port);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("app.fxml"));
         Scene scene = new Scene(loader.load());
-        
-        // Corrected path to the CSS file
-        scene.getStylesheets().add(getClass().getResource("/com/example/styles.css").toExternalForm());
-        
+
+        String css = this.getClass().getResource("styles.css").toExternalForm();
+        scene.getStylesheets().add(css);
+
+        Application.setUserAgentStylesheet(css);
+
         stage.setScene(scene);
         stage.setTitle("Client App");
         stage.show();

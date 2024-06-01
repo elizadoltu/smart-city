@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.AppController" alignment="CENTER" spacing="20" prefWidth="900" prefHeight="600">
-    <Label text="Smart-City" styleClass="title-label"/>
-    <Button text="Log in as Admin" fx:id="adminLoginButton"/>
-    <Button text="Log in as User" fx:id="userLoginButton"/>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.AppController" alignment="CENTER" spacing="20" prefWidth="900" prefHeight="600" styleClass="landing-page">
+    <Label text="Smart-City" styleClass="title-label-landing"/>
+    <Button text="Log in as Admin" fx:id="adminLoginButton" styleClass="fancy-button"/>
+    <Button text="Log in as User" fx:id="userLoginButton" styleClass="fancy-button"/>
 </VBox>

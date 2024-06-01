@@ -4,16 +4,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.client.AdminLoginController"
-      alignment="CENTER" spacing="10" prefWidth="900" prefHeight="600">
+      alignment="CENTER" spacing="20" prefWidth="900" prefHeight="600"
+      style="-fx-background-color: #181818;">
 
+    <HBox alignment="TOP_LEFT" style="-fx-padding: 10px;">
+        <Button fx:id="backButton" text="Back" styleClass="button"/>
+    </HBox>
+    
     <Label text="Admin Login" styleClass="title-label"/>
-    <TextField fx:id="usernameField" promptText="Username"/>
-    <PasswordField fx:id="passwordField" promptText="Password"/>
-    <Button text="Login" onAction="#handleLogin"/>
-    <Label fx:id="messageLabel" textFill="red"/>
+    <TextField fx:id="usernameField" promptText="Username" styleClass="text-field small-text-field"/>
+    <PasswordField fx:id="passwordField" promptText="Password" styleClass="text-field small-text-field"/>
+    <Button text="Login" onAction="#handleLogin" styleClass="button"/>
+    <Label fx:id="messageLabel" textFill="red" styleClass="message-label"/>
 </VBox>

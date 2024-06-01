@@ -7,27 +7,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.AdminManagementController" alignment="CENTER" spacing="10" prefWidth="900" prefHeight="600">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.AdminManagementController" styleClass="admin-info-lists-container">
     <Label text="Admin Management" styleClass="title-label"/>
 
-    <HBox spacing="10">
+    <HBox spacing="10" styleClass="lists-container">
         <VBox>
-            <Label text="Parking Lots"/>
-            <ListView fx:id="parkingListView"/>
+            <Label text="Parking Lots" styleClass="section-label"/>
+            <ListView fx:id="parkingListView" styleClass="parking-list-view"/>
         </VBox>
         <VBox>
-            <Label text="Power Stations"/>
-            <ListView fx:id="powerStationListView"/>
+            <Label text="Power Stations" styleClass="section-label"/>
+            <ListView fx:id="powerStationListView" styleClass="parking-list-view"/>
         </VBox>
         <VBox>
-            <Label text="Users"/>
-            <ListView fx:id="userListView"/>
+            <Label text="Users" styleClass="section-label"/>
+            <ListView fx:id="userListView" styleClass="parking-list-view"/>
         </VBox>
     </HBox>
 
     <HBox spacing="10">
         <VBox spacing="5">
-            <Label text="Parking Lot Name"/>
+            <Label text="Parking Lot Name" styleClass="section-label"/>
             <TextField fx:id="parkingNameField" promptText="Parking Lot Name"/>
             <Label text="Availability"/>
             <TextField fx:id="parkingAvailabilityField" promptText="Availability"/>
@@ -36,7 +36,7 @@
         </VBox>
 
         <VBox spacing="5">
-            <Label text="Power Station Name"/>
+            <Label text="Power Station Name" styleClass="section-label"/>
             <TextField fx:id="powerStationNameField" promptText="Power Station Name"/>
             <Label text="Availability"/>
             <TextField fx:id="powerStationAvailabilityField" promptText="Availability"/>

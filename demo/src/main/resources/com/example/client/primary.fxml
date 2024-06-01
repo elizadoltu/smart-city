@@ -12,11 +12,12 @@
       prefWidth="900" prefHeight="600"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.client.PrimaryController"
-      spacing="10" alignment="CENTER">
+      spacing="10" alignment="CENTER"
+      style="-fx-background-color: #181818;">
 
-    <Label text="Smart-City" styleClass="title-label"/>
+    <Label text="Smart-City" styleClass="title-label-landing"/>
     
-    <HBox spacing="50" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+    <HBox spacing="50" alignment="CENTER" VBox.vgrow="ALWAYS">
         <VBox fx:id="parkingLotsVBox" alignment="TOP_LEFT" spacing="10">
             <Label text="Parking Lots" styleClass="section-label"/>
         </VBox>
@@ -25,5 +26,4 @@
         </VBox>
     </HBox>
 
-   
 </VBox>

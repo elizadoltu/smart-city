@@ -9,11 +9,11 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.client.PowerStationController"
-      spacing="10" alignment="CENTER" styleClass="vbox"
+      spacing="20" alignment="CENTER" styleClass="vbox"
       prefWidth="900" prefHeight="600">
 
-    <Label fx:id="powerStationLabel" />
-    <ImageView fx:id="powerStationImageView" fitWidth="400" fitHeight="300" />
-    <CheckBox text="I am charging here" fx:id="chargingHereCheckBox" />
-    <Button fx:id="backButton" text="Back" />
+    <Label fx:id="powerStationLabel" text="Power Station" styleClass="title-label"/>
+    <ImageView fx:id="powerStationImageView" fitWidth="400" fitHeight="300" styleClass="image-view"/>
+    <CheckBox text="I am charging here" fx:id="chargingHereCheckBox" styleClass="custom-checkbox"/>
+    <Button fx:id="backButton" text="Back" styleClass="button"/>
 </VBox>
