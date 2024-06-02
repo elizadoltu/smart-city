@@ -10,5 +10,6 @@
     <Label fx:id="parkingLotLabel" text="Parking Lot" styleClass="title-label"/>
     <ImageView fx:id="parkingLotImageView" fitWidth="400" fitHeight="300" styleClass="image-view"/>
     <CheckBox text="I am parked here" fx:id="parkedHereCheckBox" styleClass="custom-checkbox"/>
+    <Button fx:id="viewLocationButton" text="See location" styleClass="button"/>
     <Button fx:id="backButton" text="Back" styleClass="button"/>
 </VBox>

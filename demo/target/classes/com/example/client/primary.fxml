@@ -19,10 +19,10 @@
     <Label text="Smart-City" styleClass="title-label-landing"/>
     
     <HBox spacing="50" alignment="CENTER" VBox.vgrow="ALWAYS">
-        <VBox fx:id="parkingLotsVBox" alignment="TOP_LEFT" spacing="10">
+        <VBox fx:id="parkingLotsVBox" alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
             <Label text="Parking Lots" styleClass="section-label"/>
         </VBox>
-        <VBox fx:id="powerStationsVBox" alignment="CENTER" spacing="10">
+        <VBox fx:id="powerStationsVBox" alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
             <Label text="Charging Stations" styleClass="section-label"/>
         </VBox>
     </HBox>

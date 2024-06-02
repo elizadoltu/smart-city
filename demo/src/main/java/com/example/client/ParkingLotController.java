@@ -1,17 +1,21 @@
 package com.example.client;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 import java.io.IOException;
+import java.util.Map;
+
 import com.example.client.DatabaseUtil;
 
 public class ParkingLotController {
@@ -23,17 +27,27 @@ public class ParkingLotController {
     private Button backButton;
 
     @FXML
+    private Button viewLocationButton;
+
+    @FXML
     private ImageView parkingLotImageView;
 
     @FXML
     private CheckBox parkedHereCheckBox;
 
+    @FXML
+    private VBox statsVBox;
+
     private String parkingLotName;
+    private HostServices hostServices;
 
     @FXML
     private void initialize() {
+        hostServices = App.getHostServicesInstance(); // Get HostServices from the App class
         backButton.setOnAction(event -> goBack());
+        viewLocationButton.setOnAction(event -> viewLocation());
         parkedHereCheckBox.setOnAction(event -> handleCheckBox());
+    
     }
 
     public void setParkingLot(String parkingLot) {
@@ -69,4 +83,16 @@ public class ParkingLotController {
             e.printStackTrace();
         }
     }
+
+    private void viewLocation() {
+        String query = parkingLotName.replace(" ", "+");
+        String url = "https://www.google.com/maps/search/?api=1&query=" + query;
+        if (hostServices != null) {
+            hostServices.showDocument(url);
+        } else {
+            System.err.println("HostServices is not set. Cannot open URL.");
+        }
+    }
+
+    
 }

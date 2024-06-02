@@ -1,6 +1,7 @@
 package com.example.client;
 
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -8,9 +9,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
-
+    private static HostServices hostServices;
+    
     @Override
     public void start(Stage stage) throws IOException {
+        hostServices = getHostServices();
 
         String hostname = "localhost";
         int port = 8081;
@@ -32,4 +35,9 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    public static HostServices getHostServicesInstance() {
+        return hostServices;
+    }
+
 }

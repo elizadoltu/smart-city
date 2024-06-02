@@ -13,7 +13,7 @@
       alignment="CENTER" spacing="20" prefWidth="900" prefHeight="600"
       style="-fx-background-color: #181818;">
 
-    <HBox alignment="TOP_LEFT" style="-fx-padding: 10px;">
+    <HBox alignment="CENTER_LEFT" style="-fx-padding: 10px;">
         <Button fx:id="backButton" text="Back" styleClass="button"/>
     </HBox>
     

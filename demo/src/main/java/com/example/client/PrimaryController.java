@@ -1,5 +1,6 @@
 package com.example.client;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -11,6 +12,8 @@ import java.io.IOException;
 import java.util.List;
 
 public class PrimaryController {
+
+     private HostServices hostServices;
 
     @FXML
     private VBox parkingLotsVBox;
@@ -52,7 +55,7 @@ public class PrimaryController {
             Parent root = loader.load();
             ParkingLotController controller = loader.getController();
             controller.setParkingLot(parkingLot);
-
+            
             Stage stage = (Stage) parkingLotsVBox.getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
