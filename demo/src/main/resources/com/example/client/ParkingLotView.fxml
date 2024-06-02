@@ -6,18 +6,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<<<<<<< HEAD
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.ParkingLotController" spacing="10" alignment="CENTER" styleClass="vbox"         prefWidth="900" prefHeight="600"
->
-    <Label fx:id="parkingLotLabel" />
-    <ImageView fx:id="parkingLotImageView" fitWidth="400" fitHeight="300" />
-    <CheckBox text="I am parked here" fx:id="parkedHereCheckBox" />
-    <Button fx:id="backButton" text="Back" />
-=======
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.ParkingLotController" spacing="20" alignment="CENTER" styleClass="vbox" prefWidth="900" prefHeight="600">
     <Label fx:id="parkingLotLabel" text="Parking Lot" styleClass="title-label"/>
     <ImageView fx:id="parkingLotImageView" fitWidth="400" fitHeight="300" styleClass="image-view"/>
     <CheckBox text="I am parked here" fx:id="parkedHereCheckBox" styleClass="custom-checkbox"/>
     <Button fx:id="backButton" text="Back" styleClass="button"/>
->>>>>>> eadf71deb243d949b5bb6fa200959474d6494ccc
 </VBox>
