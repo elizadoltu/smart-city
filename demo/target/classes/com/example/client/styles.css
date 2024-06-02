@@ -6,13 +6,13 @@
     -fx-background-color: #181818;
     -fx-padding: 20px;
     -fx-background-radius: 10px;
-    -fx-alignment: center; 
+    -fx-alignment: center; /* Center align the elements */
 }
 
 .landing-page {
     -fx-background-color: #181818;
     -fx-padding: 40px;
-    -fx-alignment: center; 
+    -fx-alignment: center; /* Center align the elements */
 }
 
 .title-label,
@@ -26,7 +26,7 @@
     -fx-font-weight: bold;
     -fx-text-fill: white;
     -fx-padding-bottom: 10px;
-    -fx-alignment: center;
+    -fx-alignment: center; /* Center align the text */
 }
 
 .title-label-landing {
