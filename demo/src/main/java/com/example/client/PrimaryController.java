@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -19,12 +18,14 @@ public class PrimaryController {
     @FXML
     private VBox powerStationsVBox;
 
-  
+    @FXML
+    private Button backButton;
 
     // Initialize method to set up initial configurations
     public void initialize() {
         displayParkingLots();
         displayPowerStations();
+        backButton.setOnAction(event -> goBack());
     }
 
     private void displayParkingLots() {
@@ -73,5 +74,15 @@ public class PrimaryController {
         }
     }
 
+    private void goBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("app.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

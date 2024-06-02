@@ -1,11 +1,16 @@
 package com.example.client;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AdminManagementController {
@@ -47,6 +52,9 @@ public class AdminManagementController {
     private Label messageLabel;
 
     @FXML
+    private Button backButton;
+
+    @FXML
     public void initialize() {
         loadParkingLots();
         loadPowerStations();
@@ -56,6 +64,7 @@ public class AdminManagementController {
         updateParkingButton.setOnAction(event -> updateParkingLot());
         addPowerStationButton.setOnAction(event -> addPowerStation());
         updatePowerStationButton.setOnAction(event -> updatePowerStation());
+        backButton.setOnAction(event -> goBack());
     }
 
     private void loadParkingLots() {
@@ -103,5 +112,16 @@ public class AdminManagementController {
         DatabaseUtil.updatePowerStationAvailability(name, availability);
         loadPowerStations();
         messageLabel.setText("Power station updated successfully.");
+    }
+    
+     private void goBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("app.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

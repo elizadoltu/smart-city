@@ -9,7 +9,7 @@
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.client.ParkingLotController" spacing="10" alignment="CENTER" styleClass="vbox"         prefWidth="900" prefHeight="600"
 >
     <Label fx:id="parkingLotLabel" />
-    <Button fx:id="backButton" text="Back" />
     <ImageView fx:id="parkingLotImageView" fitWidth="400" fitHeight="300" />
     <CheckBox text="I am parked here" fx:id="parkedHereCheckBox" />
+    <Button fx:id="backButton" text="Back" />
 </VBox>

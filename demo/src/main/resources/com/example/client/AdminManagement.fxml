@@ -44,6 +44,7 @@
             <Button fx:id="updatePowerStationButton" text="Update Power Station"/>
         </VBox>
     </HBox>
+        <Button fx:id="backButton" text="Back" />
 
     <Label fx:id="messageLabel" textFill="green"/>
 </VBox>
