@@ -13,8 +13,10 @@
       prefWidth="900" prefHeight="600"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.client.PrimaryController"
-      spacing="10" alignment="CENTER">
+      spacing="10" alignment="CENTER"
+      style="-fx-background-color: #181818;">
 
+<<<<<<< HEAD
     <!-- Spacer to push content down -->
     <Region prefHeight="60" VBox.vgrow="NEVER" />
 
@@ -22,12 +24,22 @@
     
     <HBox spacing="50" alignment="CENTER" VBox.vgrow="ALWAYS">
         <VBox fx:id="parkingLotsVBox" alignment="CENTER" spacing="10">
+=======
+    <Label text="Smart-City" styleClass="title-label-landing"/>
+    
+    <HBox spacing="50" alignment="CENTER" VBox.vgrow="ALWAYS">
+        <VBox fx:id="parkingLotsVBox" alignment="TOP_LEFT" spacing="10">
+>>>>>>> eadf71deb243d949b5bb6fa200959474d6494ccc
             <Label text="Parking Lots" styleClass="section-label"/>
         </VBox>
         <VBox fx:id="powerStationsVBox" alignment="CENTER" spacing="10">
             <Label text="Charging Stations" styleClass="section-label"/>
         </VBox>
     </HBox>
+<<<<<<< HEAD
     <Button fx:id="backButton" text="Back" />
      
+=======
+
+>>>>>>> eadf71deb243d949b5bb6fa200959474d6494ccc
 </VBox>

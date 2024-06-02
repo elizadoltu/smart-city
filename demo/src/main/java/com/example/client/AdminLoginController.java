@@ -24,7 +24,16 @@ public class AdminLoginController {
     private Label messageLabel;
 
     @FXML
+    private Button backButton;
+
+    @FXML 
+    private void initialize() {
+        backButton.setOnAction(event -> goBack());
+    }
+
+    @FXML
     private void handleLogin() {
+
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -33,12 +42,24 @@ public class AdminLoginController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminManagement.fxml"));
                 Parent root = loader.load();
                 Stage stage = (Stage) usernameField.getScene().getWindow();
+
                 stage.setScene(new Scene(root));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             messageLabel.setText("Invalid username or password");
+        }
+    }
+
+    private void goBack() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("app.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

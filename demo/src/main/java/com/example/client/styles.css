@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+.admin-info-lists-container,
+.vbox,
+.lists-container {
+    -fx-background-color: #181818;
+    -fx-padding: 20px;
+    -fx-background-radius: 10px;
+    -fx-alignment: center; /* Center align the elements */
+}
+
+.landing-page {
+    -fx-background-color: #181818;
+    -fx-padding: 40px;
+    -fx-alignment: center; /* Center align the elements */
+}
+
+.title-label,
+.section-label,
+.message-label,
+#messageLabel,
+#powerStationLabel,
+.title-label-landing {
+    -fx-font-family: 'Urbanist', sans-serif;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding-bottom: 10px;
+    -fx-alignment: center; /* Center align the text */
+}
+
+.title-label-landing {
+    -fx-font-size: 36px;
+    -fx-padding-bottom: 30px;
+}
+
+.text-field,
+.small-text-field {
+    -fx-font-family: 'Urbanist', sans-serif;
+    -fx-font-size: 14px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-padding: 5px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+.small-text-field {
+    -fx-pref-width: 200px;  
+    -fx-max-width: 200px; 
+    -fx-font-size: 12px;
+}
+
+.button,
+.fancy-button,
+#adminLoginButton,
+#userLoginButton,
+#addParkingButton,
+#updateParkingButton,
+#addPowerStationButton,
+#updatePowerStationButton,
+#backButton {
+    -fx-font-family: 'Urbanist', sans-serif;
+    -fx-font-size: 18px;
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
+
+.button:hover,
+.fancy-button:hover,
+#adminLoginButton:hover,
+#userLoginButton:hover,
+#addParkingButton:hover,
+#updateParkingButton:hover,
+#addPowerStationButton:hover,
+#updatePowerStationButton:hover,
+#backButton:hover {
+    -fx-background-color: #0056b3;
+}
+
+.button:pressed,
+.fancy-button:pressed,
+#adminLoginButton:pressed,
+#userLoginButton:pressed,
+#addParkingButton:pressed,
+#updateParkingButton:pressed,
+#addPowerStationButton:pressed,
+#updatePowerStationButton:pressed,
+#backButton:pressed {
+    -fx-background-color: #003f7f;
+}
+
+.parking-list-view,
+.power-station-list-view,
+.user-list-view {
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: white; 
+}
+
+.custom-checkbox {
+    -fx-font-family: 'Urbanist', sans-serif;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-text-fill: white;
+}
+
+.custom-checkbox .box {
+    -fx-border-color: #181818;
+    -fx-border-width: 2px;
+    -fx-background-color: transparent;
+    -fx-min-width: 16px;
+    -fx-min-height: 16px;
+}
+
+.custom-checkbox .box:checked {
+    -fx-background-color: #007bff;
+    -fx-border-color: #007bff;
+}
+
+.custom-checkbox .box:checked .mark {
+    -fx-stroke: #ffffff;
+    -fx-stroke-width: 2px;
+}
+
+.image-view {
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-background-color: transparent;
+    -fx-padding: 5px;
+}
